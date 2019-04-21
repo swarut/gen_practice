@@ -9,33 +9,17 @@ defmodule GenPractice.CLI do
 
     out = EEx.eval_string(text, name: name, class_name: "classname")
     quote do
-      # unquote(var) = unquote(rendered_content)
       unquote(var) = unquote(out)
     end
   end
 
-  def run do
+  def main(_args) do
     mac(:output)
-    IO.puts(output)
+    File.write("example.rb", output)
   end
 
-  def main(args) do
-    # [name | _ ] = args
-    # IO.puts "Generating base Ruby code."
-    # System.cmd("mkdir", ["ruby"])
-    # System.cmd("mkdir", ["spec"], cd: "ruby")
-    # System.cmd("cp", ["templates/ruby/Gemfile", "ruby"])
-    # System.cmd("cp", ["templates/ruby/.rspec", "ruby"])
-    # System.cmd("cp", ["templates/ruby/spec_helper.rb", "ruby/spec"])
-    # IO.puts "* Generating base source and spec."
-    # gen_ruby_main_file(name)
-    # gen_ruby_spec_file(name)
 
-    # IO.puts "* Running bundle"
-    # System.cmd("bundle", ["install"], cd: "ruby")
-    # IO.puts "::Completed::"
-    run()
-  end
+
 
 
 
