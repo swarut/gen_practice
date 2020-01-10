@@ -1,4 +1,10 @@
 class <%= class_name %>
-  def <%= name %>
+
+  class << self
+
+    def solve()
+    end
+
   end
+
 end

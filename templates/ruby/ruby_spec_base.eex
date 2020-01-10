@@ -1,12 +1,11 @@
 require './<%= name %>'
 describe <%= class_name %> do
   before do
-    @<%= name %> = <%= class_name %>.new
   end
 
-  describe '' do
-    it '' do
-      expect().to eq()
+  describe '<%= class_name %>.solve' do
+    it 'solve the problem' do
+      expect(<%= class_name %>.solve()).to eq()
     end
   end
 
